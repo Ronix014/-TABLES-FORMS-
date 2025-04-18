@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Forms and Invoice</title>
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            background-color: #ffffff;
+            color: navy;
+            font-size: 1.125em;
+            margin: 20px;
+        }
+        
+        table{
+            border:5px solid #303c6c;
+            border-collapse: collapse;
+            margin: 10px auto;
+        }
+
+        
+
+        thead tr {
+            background-color: #b4dfe5;
+        }
+
+        thead td, thead th {
+            background-color: #b4dfe5;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 12px;
+            border: 2px solid #303c6c;
+        }
+
+        td, th {
+            border: 1px solid #303c6c;
+            padding: 15px;
+            vertical-align: top;
+        }
+
+        input[type=text], textarea, select {
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #b4dfe5;
+            color: navy;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: Verdana;
+            font-size: 1.125em;
+        }
+
+        input[type=submit]:hover {
+            background-color: #379683;
+            color: white;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .form-section th {
+            text-align: left;
+        }
+
+        .invoice-header {
+            background-color: #3d4a80;
+            color: white;
+            font-weight: bold;
+        }
+
+        .info-section {
+            background-color: #7dd3a1;
+        }
+
+        .info-section th {
+            text-align: left;
+            color: #000;
+        }
+
+        .table-header {
+            background-color: #3d4a80;
+            color: white;
+        }
+
+        .item-paperclips td {
+            background-color: #edf1e0;
+        }
+
+        .item-staples td {
+            background-color: #ffffff;
+        }
+
+        .item-bondpaper td {
+            background-color: #edf1e0;
+        }
+
+        .tax-row td {
+            background-color: #edf1e0;
+        }
+
+        .grand-total td {
+            background-color: #3d4a80;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #f1f0f0;
+        }
+
+        .totals-row td {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+
+        .center-align {
+            text-align: center;
+        }
+
+        .right-align {
+            text-align: right;
+        }
+
+        .left-align {
+            text-align: left;
+        }
+
+        /* Add blue border around the form */
+        .form-table {
+            border: 4px solid #303c6c; /* Blue border */
+            box-shadow: none;
+        }
+
+        .form-table td,
+        .form-table th {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Invoice Section -->
+    <table>
+        <thead>
+            <tr>
+                <td colspan="4">Invoice Tabular Data</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="invoice-header">
+                <th class="left-align" colspan="2">Invoice #123456789</th>
+                <th class="right-align" colspan="2">14 January 2025</th>
+            </tr>
+            <tr class="info-section">
+                <td colspan="2">
+                    <strong>Pay to:</strong><br>
+                    Acme Billing Co.<br>
+                    123 Main St.<br>
+                    Cityville, NA 12345
+                </td>
+                <td colspan="2">
+                    <strong>Customer:</strong><br>
+                    John Smith<br>
+                    321 Willow Way<br>
+                    Southeast Northwesternshire, MA 54321
+                </td>
+            </tr>
+            <tr class="table-header center-align">
+                <th class="left-align">Name / Description</th>
+                <th>Qty.</th>
+                <th>@</th>
+                <th>Cost</th>
+            </tr>
+            <tr class="item-paperclips">
+                <td>Paperclips</td>
+                <td class="center-align">1000</td>
+                <td class="center-align">0.01</td>
+                <td class="right-align">10.00</td>
+            </tr>
+            <tr class="item-staples">
+                <td>Staples (box)</td>
+                <td class="center-align">100</td>
+                <td class="center-align">1.00</td>
+                <td class="right-align">100.00</td>
+            </tr>
+            <tr class="item-bondpaper">
+                <td>Bond Paper (box)</td>
+                <td class="center-align">100</td>
+                <td class="center-align">1.00</td>
+                <td class="right-align">100.00</td>
+            </tr>
+            <tr class="totals-row">
+                <td colspan="3"><strong>Subtotal</strong></td>
+                <td class="right-align">110.00</td>
+            </tr>
+            <tr class="tax-row">
+                <td colspan="2"><strong>Tax</strong></td>
+                <td class="center-align">8%</td>
+                <td class="right-align">8.80</td>
+            </tr>
+            <tr class="grand-total">
+                <td colspan="3"><strong>Grand Total</strong></td>
+                <td class="right-align">$118.80</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Form Section -->
+    <form method="post" action="greetings.html">
+        <table class="form-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody class="form-section">
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" name="name" size="30" placeholder="Type your name here" maxlength="50" autofocus required></td>
+                </tr>
+                <tr>
+                    <td><label for="sex">Sex:</label></td>
+                    <td>
+                        <input type="radio" id="male" name="gender" value="male" checked>
+                        <label for="male">Male</label><br>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label><br>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="eyeColor">Eye Color:</label></td>
+                    <td>
+                        <select name="eyeColor" id="eyeColor">
+                            <option value="green">Green</option>
+                            <option value="blue">Blue</option>
+                            <option value="brown">Brown</option>
+                            <option value="black" selected>Black</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="checkAll">Check all that apply:</label></td>
+                    <td>
+                        <input type="checkbox" id="feature1" name="feature1" value="6ft.">
+                        <label for="feature1">Over 6ft. Tall</label><br>
+                        <input type="checkbox" id="feature2" name="feature2" value="200lbs.">
+                        <label for="feature2">Over 200 pounds</label><br>
+                        <input type="checkbox" id="feature3" name="feature3" value="less than 200lbs.">
+                        <label for="feature3">Less than 200 pounds</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="ability">Describe your athletic ability:</label></td>
+                    <td>
+                        <textarea name="ability" rows="10" cols="30"></textarea>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="2"><input type="submit" id="btn1" value="Enter my Information"></th>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+
+</body>
+</html>
