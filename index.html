@@ -39,14 +39,13 @@
             vertical-align: top;
         }
 
-        input[type=text], textarea, select {
+        input[type=text], textarea, select{
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
-            width: 100%;
         }
 
         input[type=submit] {
@@ -145,6 +144,21 @@
         .form-table th {
             border: none;
         }
+
+        .form-section tr {
+            border-bottom: none; /* Remove the row border */
+        }
+
+        .form-section td {
+            border-bottom: 2px solid #4A90E2; /* Blue underline for each cell */
+            text-align: left; /* Center the text horizontally */
+            vertical-align: middle; /* Center the text vertically */
+        }
+
+        .form-section td:first-child {
+            border-left: none; /* Remove left border for the first cell of each row */
+        }
+
     </style>
 </head>
 <body>
@@ -252,7 +266,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><label for="checkAll">Check all that apply:</label></td>
+                    <td><label for="checkAll">Check all that Applies:</label></td>
                     <td>
                         <input type="checkbox" id="feature1" name="feature1" value="6ft.">
                         <label for="feature1">Over 6ft. Tall</label><br>
